@@ -2,8 +2,8 @@ from django.db import models
 
 # Create your views here.
 property_type = {
-    ('s', 'sale'),
-    ('r', 'rate')
+    ('sale', 'sale'),
+    ('rate', 'rate')
 }
 
 

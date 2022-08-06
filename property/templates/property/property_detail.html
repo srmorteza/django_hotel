@@ -1,10 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-{{property_detail}}
-</body>
-</html>
+{% extends 'base.html' %}
+{% block body %}
+
+    <section class="probootstrap-slider flexslider2 page-inner">
+        <div class="overlay"></div>
+        <div class="probootstrap-wrap-banner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+
+                        <div class="page-title probootstrap-animate">
+                            <div class="probootstrap-breadcrumbs">
+                                <a href="#">Home</a><span> <a href="{% url 'property:property_list' %}"> Properties</a> </span> {{ property_detail }}
+                            </div>
+                            <h1>{{ property_detail }}</h1>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ul class="slides">
+            <li style="background-image: url(img/slider_1.jpg);"></li>
+            <li style="background-image: url(img/slider_4.jpg);"></li>
+            <li style="background-image: url(img/slider_2.jpg);"></li>
+        </ul>
+    </section>
+    <!-- END: slider  -->
+
+    <section class="probootstrap-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p><img src="{{ property_detail.image.url }}" class="img-responsive"
+                            alt="Free Bootstrap Template by uicookies.com"></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-10">
+                    <h2>Details: </h2>
+                    <p> name: {{ property_detail.name }}</p>
+                    <p>property_type: {{ property_detail.property_type }}</p>
+                    <p>price: {{ property_detail.price }}</p>
+                    <p>area: {{ property_detail.area }}</p>
+                    <p>beds number: {{ property_detail.beds_number }}</p>
+                    <p>bathroom number: {{ property_detail.baths_number }}</p>
+                    <p>garage number: {{ property_detail.garage_number }}</p>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
