@@ -8,7 +8,7 @@ property_type = {
 
 
 class Property(models.Model):
-    name = models.CharField(max_length=50, verbose_name=' عنوان ')
+    name = models.CharField(max_length=50)
     property_type = models.CharField(choices=property_type, max_length=10)
     price = models.PositiveIntegerField()
     area = models.DecimalField(decimal_places=2, max_digits=8)
@@ -27,7 +27,7 @@ class Property(models.Model):
 
 
 class Category(models.Model):
-    category_name = models.CharField(max_length=50, verbose_name=' عنوان ')
+    category_name = models.CharField(max_length=50)
 
     def __str__(self):
         return self.category_name
@@ -35,3 +35,12 @@ class Category(models.Model):
     class Meta:
         verbose_name = 'category'
         verbose_name_plural = 'categories'
+
+
+class Reserve(models.Model):
+    name = models.CharField(max_length=50)
+    email = models.EmailField()
+    notes = models.TextField()
+
+    def __str__(self):
+        return self.name

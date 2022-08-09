@@ -52,4 +52,22 @@
         </div>
     </section>
 
+
+    <section class="probootstrap-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h2> Reserve this property:</h2>
+                    <form method="post" action="">
+                        {% csrf_token %}
+                        {{ reserve_form }}
+                        <button type="submit" class="btn btn-primary"> submit</button>
+
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
 {% endblock %}
